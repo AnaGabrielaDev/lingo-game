@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://2uctjedu21kk"]
+
+[ext_resource type="Texture2D" uid="uid://d3yb73sdaexfp" path="res://objects/Barrel Sprite.png" id="1_r386n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnu3s"]
+size = Vector2(13.9286, 14.2857)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_r386n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-0.178572, 6.38621e-07)
+shape = SubResource("RectangleShape2D_vnu3s")

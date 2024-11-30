@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://doc2snbxanp86"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_6htlr"]
+[ext_resource type="Texture2D" uid="uid://bfb8m55j5ln84" path="res://Lingo (1).png" id="1_so1cb"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_6htlr")
+
+[node name="Lingo(1)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(740.769, 373.077)
+scale = Vector2(1.03588, 0.877657)
+texture = ExtResource("1_so1cb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 114.0
+offset_top = 71.0
+offset_right = 206.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 76.0
+offset_right = 343.0
+offset_bottom = 99.0
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]

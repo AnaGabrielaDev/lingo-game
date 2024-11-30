@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://3xssvawvhfd6"]
+
+[ext_resource type="Texture2D" uid="uid://chf2jn5d7it3t" path="res://objects/Furniture Pack/furniture/individual sprites coloured outlines/Slice 3 - Copia.png" id="1_31hh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n508p"]
+size = Vector2(10.7692, 14.6154)
+
+[node name="cadeira2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_31hh4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-0.769231, 0.384615)
+shape = SubResource("RectangleShape2D_n508p")

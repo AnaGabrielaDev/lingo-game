@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://m8u8rr7ibwin"]
+
+[ext_resource type="Script" path="res://management/intro2.gd" id="1_7ap4y"]
+[ext_resource type="VideoStream" path="res://Background/intro2.ogv" id="2_vmado"]
+[ext_resource type="AudioStream" uid="uid://xl7xbyt3hwm0" path="res://dialog/music/flow-239529.mp3" id="4_6evh3"]
+
+[node name="intro2" type="Node2D" node_paths=PackedStringArray("_hud")]
+script = ExtResource("1_7ap4y")
+_hud = NodePath("HUD")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 642.0
+offset_bottom = 359.0
+size_flags_horizontal = 4
+stream = ExtResource("2_vmado")
+autoplay = true
+expand = true
+loop = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6evh3")
+autoplay = true

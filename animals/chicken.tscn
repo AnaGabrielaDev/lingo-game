@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyjgad1gdigju"]
+
+[ext_resource type="Script" path="res://chicken.gd" id="1_x6wtb"]
+[ext_resource type="Texture2D" uid="uid://wv7ujqmvv7yq" path="res://character/assets/farmingTilesheetComplete.png" id="2_jbtgn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxe6n"]
+atlas = ExtResource("2_jbtgn")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bso7k"]
+atlas = ExtResource("2_jbtgn")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m186i"]
+atlas = ExtResource("2_jbtgn")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n8ov"]
+atlas = ExtResource("2_jbtgn")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de4i1"]
+atlas = ExtResource("2_jbtgn")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n7iv"]
+atlas = ExtResource("2_jbtgn")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whuk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxe6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bso7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m186i")
+}],
+"loop": true,
+"name": &"eating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n8ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de4i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n7iv")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylp02"]
+radius = 5.09902
+
+[node name="chicken" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_x6wtb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_whuk4")
+animation = &"eating"
+frame_progress = 0.732746
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ylp02")

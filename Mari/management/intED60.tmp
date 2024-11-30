@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://hj5xtiuncdjb"]
+
+[ext_resource type="Script" path="res://management/intro1.gd" id="1_iv0ep"]
+[ext_resource type="PackedScene" uid="uid://bpr5n2ckph5l2" path="res://management/transition.tscn" id="2_22tu0"]
+[ext_resource type="Texture2D" uid="uid://y675ekmtau81" path="res://Background/background.png" id="2_nyrey"]
+[ext_resource type="VideoStream" path="res://Background/back-animated.ogv" id="3_2abw6"]
+[ext_resource type="AudioStream" uid="uid://3fkapx6xlqwj" path="res://dialog/music/Locations_in_the_FC_Overworld_Lichenstone_June_Flower.mp3" id="4_twp5t"]
+
+[node name="intro1" type="Node2D" node_paths=PackedStringArray("_hud")]
+script = ExtResource("1_iv0ep")
+_hud = NodePath("HUD")
+
+[node name="Transition" parent="." instance=ExtResource("2_22tu0")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(322, 180)
+scale = Vector2(0.503468, 0.503469)
+texture = ExtResource("2_nyrey")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 642.0
+offset_bottom = 359.0
+size_flags_horizontal = 4
+stream = ExtResource("3_2abw6")
+autoplay = true
+expand = true
+loop = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_twp5t")
+autoplay = true

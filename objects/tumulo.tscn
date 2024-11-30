@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj2fjdkuqei2y"]
+
+[ext_resource type="Texture2D" uid="uid://dmb2bshmey06t" path="res://objects/tumulo.png" id="1_k2ggg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v76j2"]
+size = Vector2(31, 33)
+
+[node name="tumulo" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2ggg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_v76j2")

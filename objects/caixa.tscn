@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5f7jpw00mt2e"]
+
+[ext_resource type="Texture2D" uid="uid://dvxrc2ldylaju" path="res://objects/caixa.png" id="1_nsncb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wijt0"]
+size = Vector2(30, 42)
+
+[node name="caixa" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nsncb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_wijt0")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cki23shfla0w4"]
+
+[ext_resource type="Texture2D" uid="uid://cn0aw6cr2sc3y" path="res://objects/estatua.png" id="1_y08ty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2unpg"]
+size = Vector2(36.6667, 73.3333)
+
+[node name="estatua" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_y08ty")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(3.17891e-07, 1.33333)
+shape = SubResource("RectangleShape2D_2unpg")

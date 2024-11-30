@@ -1,0 +1,172 @@
+[gd_scene load_steps=9 format=3 uid="uid://7qx4cqgibuw"]
+
+[ext_resource type="Script" path="res://Mari/management/dialog_screen.gd" id="1_n30iu"]
+[ext_resource type="Texture2D" uid="uid://bwip837tuai3c" path="res://Mari/dialog/assets/gato1_faceset.jpg" id="2_e66kj"]
+[ext_resource type="FontFile" uid="uid://5l41du13xgs3" path="res://Mari/dialog/fonts/EquipmentPro.ttf" id="3_3efsf"]
+[ext_resource type="Texture2D" uid="uid://dx0tyexravcti" path="res://Mari/dialog/assets/dark cursor 03.png" id="4_s0yrb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n3phh"]
+line_spacing = 0.0
+font = ExtResource("3_3efsf")
+font_size = 32
+shadow_color = Color(0, 0, 0, 0.6)
+
+[sub_resource type="Animation" id="Animation_61vgk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(303.688, 64.1875)]
+}
+
+[sub_resource type="Animation" id="Animation_1sua0"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(620, 134), Vector2(620, 136)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fr86o"]
+_data = {
+"RESET": SubResource("Animation_61vgk"),
+"idle": SubResource("Animation_1sua0")
+}
+
+[node name="DialogScreen" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -200.0
+offset_right = 320.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_n30iu")
+_name = NodePath("Background/HContainer/VContainer/Name")
+_dialog = NodePath("Background/HContainer/VContainer/Dialog")
+_faceset = NodePath("Background/HContainer/Border/Faceset")
+
+[node name="Background2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -164.0
+offset_right = 324.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -160.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.138222, 0.282012, 0.174091, 1)
+
+[node name="HContainer" type="HBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(624, 144)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -36.0
+offset_right = 156.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="ColorRect" parent="Background/HContainer"]
+custom_minimum_size = Vector2(144, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Faceset" type="TextureRect" parent="Background/HContainer/Border"]
+custom_minimum_size = Vector2(140, 144)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -36.0
+offset_right = 35.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e66kj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VContainer" type="VBoxContainer" parent="Background/HContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="Background/HContainer/VContainer"]
+layout_mode = 2
+text = "Gato Rabugento"
+label_settings = SubResource("LabelSettings_n3phh")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialog" type="RichTextLabel" parent="Background/HContainer/VContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/table_v_separation = 1
+theme_override_constants/table_h_separation = 1
+theme_override_fonts/normal_font = ExtResource("3_3efsf")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+text = "test"
+
+[node name="DarkCursor03" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(303.688, 64.1875)
+scale = Vector2(2.10938, 2.99027)
+texture = ExtResource("4_s0yrb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DarkCursor03"]
+libraries = {
+"": SubResource("AnimationLibrary_fr86o")
+}
+autoplay = "idle"

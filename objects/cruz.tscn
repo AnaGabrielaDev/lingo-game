@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0vpl7m2331rc"]
+
+[ext_resource type="Texture2D" uid="uid://dkxh1pm4erdis" path="res://objects/cruz.png" id="1_8q12j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxymw"]
+size = Vector2(25, 37)
+
+[node name="cruz" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8q12j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("RectangleShape2D_fxymw")

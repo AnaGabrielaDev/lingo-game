@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbqtxj4yywv4l"]
+
+[ext_resource type="Texture2D" uid="uid://02cnip6u4kv0" path="res://objects/Furniture Pack/furniture/individual sprites coloured outlines/Slice 148.png" id="1_ou208"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3n5d"]
+size = Vector2(15.3333, 26.6667)
+
+[node name="cama" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ou208")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0.666667, 2)
+shape = SubResource("RectangleShape2D_x3n5d")

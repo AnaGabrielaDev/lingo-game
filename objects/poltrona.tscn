@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ofkosblj8b18"]
+
+[ext_resource type="Texture2D" uid="uid://riake58cn3j5" path="res://objects/Furniture Pack/furniture/individual sprites coloured outlines/Slice 39.png" id="1_mkp47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkp6r"]
+size = Vector2(12.8571, 24.2857)
+
+[node name="poltrona" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_mkp47")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-3.40598e-07, -8.51495e-07)
+shape = SubResource("RectangleShape2D_mkp6r")

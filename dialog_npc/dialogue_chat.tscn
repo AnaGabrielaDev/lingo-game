@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://yc285ka8h6np"]
+
+[ext_resource type="Script" path="res://dialog_npc/dialogue_chat.gd" id="1_3tfb7"]
+[ext_resource type="Texture2D" uid="uid://cut4laxhmh6ue" path="res://terrain/assets/inventory-background.png" id="2_e1x6s"]
+
+[node name="dialogue_chat" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3tfb7")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -88.0
+offset_top = -152.0
+offset_right = 1.0
+offset_bottom = -112.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_e1x6s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+text = "Nome"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 203.0
+offset_bottom = 72.0
+scale = Vector2(0.4, 0.4)
+text = "chatting"

@@ -1,0 +1,8 @@
+res://Scenes/main.tscn
+res://Scenes/keyboard.tscn
+res://Scenes/keyboard_button.tscn
+res://Scenes/results_ui.tscn
+res://Scenes/row.tscn
+res://Scenes/special_button.tscn
+res://Scenes/validation_alert.tscn
+res://teste/level_2.tscn
